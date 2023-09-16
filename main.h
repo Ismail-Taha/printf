@@ -37,10 +37,5 @@ int _printf(const char *format, ...);
 int prf_looper(const char *format, func_printer printers[], va_list ap);
 
 
-
-
-
-
-
 #endif /* MAIN_H */
 
