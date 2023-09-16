@@ -10,9 +10,9 @@ void _puts(char *str);
 int _atoi(char *s);
 
 /* printers */
-int print_char(va_list arg);
-int print_string(va_list arg);
-int print_percent(va_list arg);
+int pr_char(va_list arg);
+int pr_string(va_list arg);
+int pr_percent(va_list arg);
 
 /* struct */
 
