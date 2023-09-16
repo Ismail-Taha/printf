@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 
 /**
  * puts - prints every character in a string

@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 
 /**
  * pr_char - prints a single char
