@@ -18,7 +18,8 @@ int _printf(const char *format, ...)
 	func_printer printers[] = {
 		{"c", pr_char},
 		{"s", pr_string},
-		{"%", pr_percent}
+		{"%", pr_percent},
+		{NULL, NULL}
 	};
 
 	if (format == NULL)
