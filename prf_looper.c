@@ -19,9 +19,9 @@ int prf_looper(const char *format, func_printer printers[], va_list ap)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; printers[j].symb != '\0'; j++)
+			for (j = 0; printers[j].symb != NULL; j++)
 			{
-				if (format[i + 1] == printers[j].symb)
+				if (format[i + 1] == printers[j].symb[0])
 				{
 					val = printers[j].print_func(ap);
 					if (val == -1)
@@ -30,7 +30,7 @@ int prf_looper(const char *format, func_printer printers[], va_list ap)
 					break;
 				}
 			}
-			if (printers[j].symb == '\0' && format[i + 1] != '\0')
+			if (printers[j].symb == NULL && format[i + 1] != '\0')
 			{
 				if (format[i + 1] != '\0')
 				{

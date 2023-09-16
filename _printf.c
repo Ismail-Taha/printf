@@ -16,9 +16,9 @@ int _printf(const char *format, ...)
 	int count;
 
 	func_printer printers[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent}
+		{"c", pr_char},
+		{"s", pr_string},
+		{"%", pr_percent}
 	};
 
 	if (format == NULL)
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	counter = prf_looper(format, printers, ap);
+	count = prf_looper(format, printers, ap);
 
 	va_end(ap);
 
