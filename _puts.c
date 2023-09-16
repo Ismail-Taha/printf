@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * puts - prints every character in a string
+ * _puts - function that print a string
  *
  * @str: string to be printed
+ * return: void.
  */
-
-
 
 void _puts(char *str)
 {
