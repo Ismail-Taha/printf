@@ -32,9 +32,16 @@ int prf_looper(const char *format, func_printer printers[], va_list ap)
 			}
 			if (printers[j].symb == NULL)
 			{
-				_putchar(format[i]);
-				_putchar(format[i + 1]);
-				count += 2;
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					count += 2;
+				} else if (format[i + 1] == '\0')
+				{
+					_putchar(format[i]);
+					count++;
+				}
 			}
 			i++;
 		}
