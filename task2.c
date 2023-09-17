@@ -21,6 +21,8 @@ int pr_binary(va_list args)
 	}
 
 	bin = int_to_binary(n);
+	if (bin == NULL)
+		return (-1);
 
 	len = _puts(bin);
 	free(bin);
