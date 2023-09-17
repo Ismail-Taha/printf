@@ -58,7 +58,8 @@ int pr_hexa(va_list args)
 	int len = 0;
 
 	n = va_arg(args, unsigned int);
-
+	if (n == 0)
+	{
 		_putchar('0');
 		return (1);
 	}
