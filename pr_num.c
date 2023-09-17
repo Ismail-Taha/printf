@@ -7,12 +7,10 @@
  */
 int pr_num(int n)
 {
-	int n;
 	int len;
 	int dev;
 	unsigned int num;
 
-	n = va_arg(args, int);
 	len = 0;
 	dev = 1;
 
@@ -44,7 +42,7 @@ int pr_num(int n)
  * @n: unsigned integer to be printed
  * Return: The amount of numbers printed
  */
-int pr_unsgined_num(unsigned int n)
+int pr_unsigned_num(unsigned int n)
 {
 	int div;
 	int len;

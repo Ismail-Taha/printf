@@ -8,8 +8,8 @@
 /* helpers */
 int _putchar(char c);
 void _puts(char *str);
-int _atoi(char *s);
-
+int pr_num(int n);
+int pr_unsigned_num(unsigned int n);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
