@@ -7,7 +7,7 @@
 
 /* helpers */
 int _putchar(char c);
-void _puts(char *str);
+int _puts(char *str);
 int pr_num(int n);
 int pr_unsigned_num(unsigned int n);
 int base_len(int n, int dev);
@@ -18,7 +18,7 @@ int pr_string(va_list arg);
 int pr_percent(va_list arg);
 int pr_int(va_list args);
 int pr_unsigned_int(va_list args);
-
+int pr_binary(va_list args);
 /* struct */
 
 /**
