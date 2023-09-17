@@ -8,7 +8,6 @@
 
 int pr_binary(va_list args)
 {
-	int i = 0;
 	unsigned int n;
 	char *bin;
 	int len;

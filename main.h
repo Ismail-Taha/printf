@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-
+#include <stdlib.h>
 /* helpers */
 int _putchar(char c);
 int _puts(char *str);
