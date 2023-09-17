@@ -107,7 +107,7 @@ char *int_to_hex(int n)
 	int mod;
 
         len = base_len(n, 16);
-	octal = malloc(sizeof(char) * (len + 1));
+	hex = malloc(sizeof(char) * (len + 1));
 	if (hex == NULL)
 	{
 		return (NULL);

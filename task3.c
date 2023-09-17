@@ -45,3 +45,32 @@ int pr_octal(va_list args)
 
 	return (len);
 }
+
+/**
+ * pr_hexa - Prints hexadecimal
+ * @args: List of all of the argumets
+ * Return: a count of the numbers
+ */
+int pr_hexa(va_list args)
+{
+	unsigned int n;
+	char *hexa;
+	int len = 0;
+
+	n = va_arg(args, unsigned int);
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	hexa = int_to_hex(n);
+	if (hexa == NULL)
+		return (-1);
+
+	len = _puts(hexa);
+	free(hexa);
+
+	return (len);
+}
