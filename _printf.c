@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		{"%", pr_percent},
 		{"i", pr_int},
 		{"d", pr_int},
+		{"b", pr_unsigned_int},
 		{NULL, NULL}
 	};
 
