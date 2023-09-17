@@ -91,7 +91,47 @@ char *int_to_octal(unsigned int n)
 	return (reversed);
 }
 
+/**
+ * int_to_hex - switch int to binary
+ *
+ * @n: integer to be switched
+ *
+ * Return: hex forme of n
+ */
 
+char *int_to_hex(int n)
+{
+	char *hex;
+	int len, i;
+	char *reversed;
+	int mod;
+
+        len = base_len(n, 16);
+	octal = malloc(sizeof(char) * (len + 1));
+	if (hex == NULL)
+	{
+		return (NULL);
+	}
+
+	for (i = 0 ; i < len; i++)
+	{
+		mod = n % 16;
+		if (mod < 10)
+		{
+			hex[i] = '0' + mod;
+		} else
+		{
+			hex[i] = 'a' + mod - 10;
+		}
+		n = n / 16;
+	}
+	hex[len] = '\0';
+
+	reversed = arr_rev(hex);
+	free(hex);
+	return (reversed);
+
+}
 
 
 
