@@ -13,6 +13,7 @@ int pr_unsigned_num(unsigned int n);
 int base_len(int n, int dev);
 char *int_to_binary(int n);
 char *arr_rev(char *arr);
+char *int_to_octal(unsigned int n);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
@@ -20,6 +21,7 @@ int pr_percent(va_list arg);
 int pr_int(va_list args);
 int pr_unsigned_int(va_list args);
 int pr_binary(va_list args);
+int pr_octal(va_list args);
 /* struct */
 
 /**
