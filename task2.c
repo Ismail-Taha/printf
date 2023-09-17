@@ -8,7 +8,7 @@
  */
 int pr_unsigned_int(va_list args)
 {
-	int n;
+	unsigned int n;
 	int len;
 
 	n = va_arg(args, unsigned int);
