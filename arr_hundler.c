@@ -1,34 +1,25 @@
 #include "main.h"
+
 /**
- * arr_rev - reverse an array
+ * arr_rev - reverse an array in-place
  *
  * @arr: array to be reversed
- *
- * Return: reversed array
  */
-
-
-
-char *arr_rev(char *arr)
+void arr_rev(char *arr)
 {
-	char *arr_r;
-	int i = 0, j = 0;
+	int length = 0;
+	int i, j;
+	char temp;
 
-	while (arr[i])
-		i++;
+	if (arr == NULL)
+		return;
 
-	arr_r = malloc(sizeof(char) * i + 1);
-	if (arr_r == NULL)
-		return (NULL);
-	i--;
-	while (i >= 0)
+	while (*arr)
+		length++;
+	for (i = 0, j = length - 1; i < j; i++, j--)
 	{
-		arr_r[j] = arr[i];
-		i--;
-		j++;
+		temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
-	arr_r[j] = '\0';
-
-	free(arr);
-	return (arr_r);
 }
