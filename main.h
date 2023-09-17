@@ -10,6 +10,8 @@ int _putchar(char c);
 void _puts(char *str);
 int pr_num(int n);
 int pr_unsigned_num(unsigned int n);
+int base_len(int n, int dev);
+char *int_to_binary(int n);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
