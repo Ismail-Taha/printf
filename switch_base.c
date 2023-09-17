@@ -51,6 +51,6 @@ char *int_to_binary(int n)
 	}
 	bin[len + 1] = '\0';
 
-	arr_rev(bin);
+	bin = arr_rev(bin);
 	return (bin);
 }

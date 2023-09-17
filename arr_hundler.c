@@ -4,22 +4,31 @@
  * arr_rev - reverse an array in-place
  *
  * @arr: array to be reversed
+ *
+ * Return: reversed string
  */
-void arr_rev(char *arr)
+char *arr_rev(char *arr)
 {
 	int length = 0;
 	int i, j;
-	char temp;
+	char *reversed;
 
 	if (arr == NULL)
-		return;
+		return (NULL);
 
 	while (*arr)
 		length++;
-	for (i = 0, j = length - 1; i < j; i++, j--)
+
+	reversed = malloc(length + 1);
+	if (reversed == NULL)
 	{
-		temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
+		return (NULL);
 	}
+	for (i = 0, j = length - 1; i < length; i++, j--)
+	{
+		reversed[i] = arr[j];
+	}
+
+	reversed[length] = '\0';
+	return (reversed);
 }
