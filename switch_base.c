@@ -44,12 +44,12 @@ char *int_to_binary(int n)
 		return (NULL);
 	}
 
-	for (i = len - 1; i >= 0; i--)
+	for (i = len; i >= 0; i--)
 	{
 		bin[i] = '0' + (n % 2);
 		n = n / 2;
 	}
-	bin[len] = '\0';
+	bin[len + 1] = '\0';
 
 	return (bin);
 }
