@@ -14,6 +14,7 @@ int pr_unsigned_num(unsigned int n);
 int pr_char(va_list arg);
 int pr_string(va_list arg);
 int pr_percent(va_list arg);
+int pr_int(va_list args);
 
 /* struct */
 
