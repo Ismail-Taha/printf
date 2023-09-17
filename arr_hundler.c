@@ -16,7 +16,7 @@ char *arr_rev(char *arr)
 	if (arr == NULL)
 		return (NULL);
 
-	while (*arr)
+	while (arr[length] != '\0')
 		length++;
 
 	reversed = malloc(length + 1);
