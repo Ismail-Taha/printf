@@ -53,18 +53,12 @@ int pr_octal(va_list args)
  */
 int pr_hexa(va_list args)
 {
-	int n;
+	unsigned int n;
 	char *hexa;
 	int len = 0;
 
-	n = va_arg(args, int);
+	n = va_arg(args, unsigned int);
 
-        if (n < 0)
-        {
-                return (-1);
-        }
-	if (n == 0)
-	{
 		_putchar('0');
 		return (1);
 	}
@@ -86,16 +80,12 @@ int pr_hexa(va_list args)
  */
 int pr_heXa(va_list args)
 {
-	int n;
+	unsigned int n;
 	char *hexa;
 	int len = 0;
 
-	n = va_arg(args, int);
+	n = va_arg(args, unsigned int);
 
-	if (n < 0)
-	{
-		return (-1);
-	}
 	if (n == 0)
 	{
 		_putchar('0');
