@@ -38,7 +38,7 @@ int pr_num(int n)
 }
 
 /**
- * pr_unsgined_num - Prints an unsigned number
+ * pr_unsigned_num - Prints an unsigned number
  * @n: unsigned integer to be printed
  * Return: The amount of numbers printed
  */
