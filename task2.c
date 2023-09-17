@@ -16,8 +16,7 @@ int pr_binary(va_list args)
 	n = va_arg(args, int);
 	if (n < 0)
 	{
-		sign = '-';
-		n = (-1) * n;
+		return (-1);
 	}
 	if (n == 0)
 	{
@@ -28,11 +27,6 @@ int pr_binary(va_list args)
 	bin = int_to_binary(n);
 	if (bin == NULL)
 		return (-1);
-	if (sign != '\0')
-	{
-		_putchar('-');
-		len++;
-	}
 	len = _puts(bin);
 	free(bin);
 
