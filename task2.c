@@ -11,7 +11,6 @@ int pr_binary(va_list args)
 	unsigned int n;
 	char *bin;
 	int len = 0;
-	char sign = '\0';
 
 	n = va_arg(args, unsigned int);
 	if (n == 0)
