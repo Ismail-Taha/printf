@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * base_lane - calculate base length
+ * base_len - calculate base length
  *
  * @n: number to be devised
  * @dev: deviser

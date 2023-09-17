@@ -13,7 +13,7 @@ int pr_binary(va_list args)
 	int len;
 
 	n = va_arg(args, unsigned int);
-	
+
 	bin = int_to_binary(n);
 
 	len = _puts(bin);
