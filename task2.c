@@ -10,9 +10,15 @@ int pr_binary(va_list args)
 {
 	unsigned int n;
 	char *bin;
-	int len;
+	int len = 0;
 
 	n = va_arg(args, unsigned int);
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	bin = int_to_binary(n);
 
