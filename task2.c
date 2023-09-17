@@ -8,12 +8,16 @@
 
 int pr_binary(va_list args)
 {
-	unsigned int n;
+	int n;
 	char *bin;
 	int len = 0;
+	char sign = '\0';
 
-	n = va_arg(args, unsigned int);
-
+	n = va_arg(args, int);
+	if (n < 0)
+	{
+		sign = '-';
+	}
 	if (n == 0)
 	{
 		_putchar('0');
@@ -23,7 +27,11 @@ int pr_binary(va_list args)
 	bin = int_to_binary(n);
 	if (bin == NULL)
 		return (-1);
-
+	if (sign != '\0')
+	{
+		_putchar('-');
+		len++;
+	}
 	len = _puts(bin);
 	free(bin);
 
