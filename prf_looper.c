@@ -37,7 +37,6 @@ int prf_looper(const char *format, func_printer printers[], va_list ap)
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
 					count += 2;
-					i++;
 				} else if (format[i + 1] == '\0')
 				{
 					_putchar(format[i]);
