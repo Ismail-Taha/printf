@@ -37,7 +37,7 @@ int pr_octal(va_list args)
 	}
 
 	octal = int_to_octal(n);
-	if (bin == NULL)
+	if (octal == NULL)
 		return (-1);
 
 	len = _puts(octal);

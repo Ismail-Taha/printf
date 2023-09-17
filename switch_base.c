@@ -84,10 +84,10 @@ char *int_to_octal(unsigned int n)
 		octal[i] = '0' + (n % 8);
 		n = n / 8;
 	}
-	bin[len] = '\0';
+	octal[len] = '\0';
 
 	reversed = arr_rev(octal);
-	free(bin);
+	free(octal);
 	return (reversed);
 }
 
