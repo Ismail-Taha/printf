@@ -15,6 +15,7 @@ char *int_to_binary(int n);
 char *arr_rev(char *arr);
 char *int_to_octal(unsigned int n);
 char *int_to_hex(int n);
+char *int_to_heX(int n);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
@@ -24,6 +25,7 @@ int pr_unsigned_int(va_list args);
 int pr_binary(va_list args);
 int pr_octal(va_list args);
 int pr_hexa(va_list args);
+int pr_heXa(va_list args);
 /* struct */
 
 /**

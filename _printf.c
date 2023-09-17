@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 		{"u", pr_unsigned_int},
 		{"o", pr_octal},
 		{"x", pr_hexa},
+		{"X", pr_heXa},
 		{NULL, NULL}
 	};
 
