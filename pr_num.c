@@ -10,6 +10,7 @@ int pr_num(va_list args)
 	int n;
 	int len;
 	int dev;
+	unsigned int num;
 
 	n = va_arg(args, int);
 	len = 0;
@@ -18,18 +19,21 @@ int pr_num(va_list args)
 	if (n < 0)
 	{
 		_putchar('-');
+		num = n * (-1);
 		len++;
+	} else
+	{
+		num = n;
 	}
-	while (n / 10 > 9)
+	while (num / dev > 9)
 	{
 		dev *= 10;
 	}
-	while (dev != 1)
+	while (dev != 0)
 	{
-		n = n / dev;
-		_putchar(n + '0');
-		n = n % dev;
-		dev = dev / 10;
+		_putchar((num / dev) + '0');
+		num = num % dev;
+		dev /=  10;
 		len++;
 	}
 	return (len);
