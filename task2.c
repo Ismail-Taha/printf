@@ -17,6 +17,7 @@ int pr_binary(va_list args)
 	if (n < 0)
 	{
 		sign = '-';
+		n = (-1) * n;
 	}
 	if (n == 0)
 	{
