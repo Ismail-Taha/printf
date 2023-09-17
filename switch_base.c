@@ -56,3 +56,46 @@ char *int_to_binary(int n)
 	free(bin);
 	return (reversed);
 }
+
+/**
+ * int_to_octal - switch int to binary
+ *
+ * @n: integer to be switched
+ *
+ * Return: octal forme of n
+ */
+
+
+char *int_to_octal(unsigned int n)
+{
+	char *octal;
+	int len, i;
+	char *reversed;
+
+        len = base_len(n, 8);
+	octal = malloc(sizeof(char) * (len + 1));
+	if (octal == NULL)
+	{
+		return (NULL);
+	}
+
+	for (i = 0 ; i < len; i++)
+	{
+		octal[i] = '0' + (n % 8);
+		n = n / 8;
+	}
+	bin[len] = '\0';
+
+	reversed = arr_rev(octal);
+	free(bin);
+	return (reversed);
+}
+
+
+
+
+
+
+
+
+
