@@ -8,15 +8,20 @@
 
 int pr_binary(va_list args)
 {
-	int len = 0;
+	int len = 0, i;
 	int n = va_arg(args, unsigned int);
 	char *bin = int_to_binary(n);
 
-	if (n < 0)
-		return (-1);
 	if (bin == NULL)
 		return (-1);
-
+	if (n < 0)
+	{
+		n = -n;
+		for (i = 0; bin[i] != '\0'; i++)
+		{
+			bin[i] = (bin[i] == '0') ? '1' : '0';
+		}
+	}
 	if (n == 0)
 	{
 		_putchar('0');
