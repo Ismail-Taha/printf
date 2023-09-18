@@ -15,6 +15,11 @@ int pr_binary(va_list args)
 	if (bin == NULL)
 		return (-1);
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	len = _puts(bin);
 	free(bin);
 
