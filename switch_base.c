@@ -31,41 +31,31 @@ int base_len(int n, int dev)
  *
  * Return: binary forme of n
  */
-
 char *int_to_binary(int n)
 {
-	int num_bits = sizeof(int) * 8;
-	char *binary = (char *)malloc((num_bits + 1) * sizeof(char));
-	int is_negative = 0;
-	int i = num_bits - 1;
+	char *bin;
+	int len, i;
+	char *reversed;
 
-	if (binary == NULL)
+	len = base_len(n, 2);
+	if (n < 0)
+		return (NULL);
+	bin = malloc(sizeof(char) * (len + 1));
+	if (bin == NULL)
 	{
 		return (NULL);
 	}
 
-	if (n < 0)
+	for (i = 0 ; i < len; i++)
 	{
-		is_negative = 1;
-		n = -n;
+		bin[i] = '0' + (n % 2);
+		n = n / 2;
 	}
+	bin[len] = '\0';
 
-	while (i >= 0)
-	{
-		binary[i] = '0' + (n % 2);
-		n /= 2;
-		i--;
-	}
-
-	if (is_negative)
-	{
-		for (i = 0; i < num_bits; i++)
-		{
-			binary[i] = (binary[i] == '0') ? '1' : '0';
-		}
-	}
-	binary[num_bits] = '\0';
-	return (binary);
+	reversed = arr_rev(bin);
+	free(bin);
+	return (reversed);
 }
 
 /**
