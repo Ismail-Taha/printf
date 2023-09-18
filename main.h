@@ -26,6 +26,8 @@ int pr_binary(va_list args);
 int pr_octal(va_list args);
 int pr_hexa(va_list args);
 int pr_heXa(va_list args);
+int pr_string_special(va_list args);
+int pr_hexa_char(char c);
 /* struct */
 
 /**

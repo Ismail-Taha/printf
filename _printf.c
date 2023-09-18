@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 		{"o", pr_octal},
 		{"x", pr_hexa},
 		{"X", pr_heXa},
+		{"S", pr_string_special},
 		{NULL, NULL}
 	};
 
