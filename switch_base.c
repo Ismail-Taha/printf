@@ -34,29 +34,38 @@ int base_len(int n, int dev)
 
 char *int_to_binary(int n)
 {
-	char *bin;
-	int len, i;
-	char *reversed;
+	int num_bits = sizeof(int) * 8;
+	char *binary = (char *)malloc((num_bits + 1) * sizeof(char));
+	int is_negative = 0;
+	int i = num_bits - 1;
 
-	len = base_len(n, 2);
+	if (binary == NULL)
+	{
+		return (NULL);
+	}
+
 	if (n < 0)
-		return (NULL);
-	bin = malloc(sizeof(char) * (len + 1));
-	if (bin == NULL)
 	{
-		return (NULL);
+		is_negative = 1;
+		n = -n;
 	}
 
-	for (i = 0 ; i < len; i++)
+	while (i >= 0)
 	{
-		bin[i] = '0' + (n % 2);
-		n = n / 2;
+		binary[i] = '0' + (n % 2);
+		n /= 2;
+		i--;
 	}
-	bin[len] = '\0';
 
-	reversed = arr_rev(bin);
-	free(bin);
-	return (reversed);
+	if (is_negative)
+	{
+		for (i = 0; i < num_bits; i++)
+		{
+			binary[i] = (binary[i] == '0') ? '1' : '0';
+		}
+	}
+	binary[num_bits] = '\0';
+	return (binary);
 }
 
 /**
