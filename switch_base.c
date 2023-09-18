@@ -74,7 +74,7 @@ char *int_to_octal(unsigned int n)
 	int len, i;
 	char *reversed;
 
-        len = base_len(n, 8);
+	len = base_len(n, 8);
 	octal = malloc(sizeof(char) * (len + 1));
 	if (octal == NULL)
 	{
@@ -108,7 +108,7 @@ char *int_to_hex(int n)
 	char *reversed;
 	int mod;
 
-        len = base_len(n, 16);
+	len = base_len(n, 16);
 	hex = malloc(sizeof(char) * (len + 1));
 	if (hex == NULL)
 	{
@@ -149,7 +149,7 @@ char *int_to_heX(int n)
 	char *reversed;
 	int mod;
 
-        len = base_len(n, 16);
+	len = base_len(n, 16);
 	hex = malloc(sizeof(char) * (len + 1));
 	if (hex == NULL)
 	{
