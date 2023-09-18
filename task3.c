@@ -35,13 +35,20 @@ int pr_octal(va_list args)
 		_putchar('0');
 		return (1);
 	}
+	if ((int)n < 0)
+	{
+		_putchar('-');
+		len = pr_num((int)-n);
+	}
+	else
+	{
+		octal = int_to_octal((int)n);
+		if (octal == NULL)
+			return (-1);
 
-	octal = int_to_octal(n);
-	if (octal == NULL)
-		return (-1);
-
-	len = _puts(octal);
-	free(octal);
+		len = _puts(octal);
+		free(octal);
+	}
 
 	return (len);
 }
@@ -72,12 +79,12 @@ int pr_hexa(va_list args)
 	else
 	{
 
-	hexa = int_to_hex(n);
-	if (hexa == NULL)
-		return (-1);
+		hexa = int_to_hex(n);
+		if (hexa == NULL)
+			return (-1);
 
-	len = _puts(hexa);
-	free(hexa);
+		len = _puts(hexa);
+		free(hexa);
 	}
 
 	return (len);
@@ -110,12 +117,12 @@ int pr_heXa(va_list args)
 	else
 	{
 
-	hexa = int_to_hex((int)n);
-	if (hexa == NULL)
-		return (-1);
+		hexa = int_to_hex((int)n);
+		if (hexa == NULL)
+			return (-1);
 
-	len = _puts(hexa);
-	free(hexa);
+		len = _puts(hexa);
+		free(hexa);
 	}
 
 	return (len);
