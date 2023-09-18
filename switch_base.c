@@ -38,8 +38,6 @@ char *int_to_binary(int n)
 	char *reversed;
 
 	len = base_len(n, 2);
-	if (n < 0)
-		return (NULL);
 	bin = malloc(sizeof(char) * (len + 1));
 	if (bin == NULL)
 	{

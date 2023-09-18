@@ -12,6 +12,8 @@ int pr_binary(va_list args)
 	int n = va_arg(args, unsigned int);
 	char *bin = int_to_binary(n);
 
+	if (n < 0)
+		return (-1);
 	if (bin == NULL)
 		return (-1);
 
