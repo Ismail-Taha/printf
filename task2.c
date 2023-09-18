@@ -9,12 +9,21 @@
 int pr_binary(va_list args)
 {
 	int len = 0, i;
+	int is_p = 1;
 	int n = va_arg(args, unsigned int);
-	char *bin = int_to_binary(n);
+	char *bin;
+       
+	if (n < 0)
+	{
+		n = -n;
+		is_p = 0;
+	}
+
+	bin = int_to_binary(n);
 
 	if (bin == NULL)
 		return (-1);
-	if (n < 0)
+	if (is_p == 0)
 	{
 		n = -n;
 		for (i = 0; bin[i] != '\0'; i++)
