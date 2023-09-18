@@ -31,11 +31,6 @@ int pr_binary(va_list args)
 			bin[i] = (bin[i] == '0') ? '1' : '0';
 		}
 	}
-	if (n == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 	len = _puts(bin);
 	free(bin);
 
