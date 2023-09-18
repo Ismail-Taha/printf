@@ -117,7 +117,7 @@ int pr_heXa(va_list args)
 	else
 	{
 
-		hexa = int_to_hex((int)n);
+		hexa = int_to_heX((int)n);
 		if (hexa == NULL)
 			return (-1);
 
