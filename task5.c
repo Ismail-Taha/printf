@@ -2,7 +2,7 @@
 
 /**
  * pr_string_special - Prints a string with non-printable char
- * @str : the special str
+ * @args : the special str
  * Return: The number of characters printed
  */
 int pr_string_special(va_list args)

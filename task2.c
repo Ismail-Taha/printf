@@ -12,7 +12,7 @@ int pr_binary(va_list args)
 	int is_p = 1;
 	int n = va_arg(args, unsigned int);
 	char *bin;
-       
+
 	if (n < 0)
 	{
 		n = -n;
