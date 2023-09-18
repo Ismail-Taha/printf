@@ -34,9 +34,14 @@ int base_len(int n, int dev)
 char *int_to_binary(int n)
 {
 	char *bin;
-	int len, i;
+	int len, i, is_p = 1;
 	char *reversed;
 
+	if (n < 0)
+	{
+		n = -n;
+		is_p = 0;
+	}
 	len = base_len(n, 2);
 	bin = malloc(sizeof(char) * (len + 1));
 	if (bin == NULL)
@@ -51,6 +56,13 @@ char *int_to_binary(int n)
 	}
 	bin[len] = '\0';
 
+	if (is_p == 0)
+	{
+		for (i = 0; bin[i] != '\0'; i++)
+		{
+			bin[i] = (bin[i] == '0') ? '1' : '0';
+		}
+	}
 	reversed = arr_rev(bin);
 	free(bin);
 	return (reversed);
