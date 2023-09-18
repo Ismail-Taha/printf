@@ -37,7 +37,7 @@ int pr_binary(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	for (len = 0; str[len] != '\0'; len++)
+	for (len = 0; bin[len] != '\0'; len++)
 		_putchar(bin[len]);
 
 	return (len);
