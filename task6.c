@@ -11,7 +11,8 @@ int pr_pointer(va_list args)
 {
 	int count = 0;
 	void *ptr = va_arg(args, void *);
-	char *hexa = int_to_hex((unsigned long)ptr);
+	unsigned long addr = (unsigned long)ptr;
+	char *hexa = int_to_hex(addr);
 
 	if (!hexa)
 		return (-1);
