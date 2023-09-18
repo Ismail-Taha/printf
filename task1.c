@@ -15,15 +15,7 @@ int pr_int(va_list args)
 
 	n = va_arg(args, int);
 
-	if (n < 0)
-	{
-		_putchar('-');
-		count = pr_num(n);
-	}
-	else
-	{
-		count = pr_num(n);
-	}
+	count = pr_num(n);
 
 	return (count);
 }
