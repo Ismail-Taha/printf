@@ -29,6 +29,7 @@ int pr_heXa(va_list args);
 int pr_string_special(va_list args);
 int pr_hexa_char(char c);
 int pr_pointer(va_list args);
+int pr_reverse(va_list args);
 /* struct */
 
 /**
