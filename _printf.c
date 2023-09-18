@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{"X", pr_heXa},
 		{"S", pr_string_special},
 		{"p", pr_pointer},
-		{"r", arr_rev},
+		{"r", pr_reverse},
 		{NULL, NULL}
 	};
 
