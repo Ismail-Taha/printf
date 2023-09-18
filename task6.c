@@ -15,7 +15,7 @@ int pr_pointer(va_list args)
 	char *hexa = int_to_hex(addr);
 
 	if (!hexa)
-		return (-1);
+		return (1);
 
 	count = _puts("0x");
 	count += _puts(hexa);
