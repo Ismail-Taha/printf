@@ -17,6 +17,8 @@ int pr_binary(va_list args)
 	if (mod < 0)
 	{
 		n = n * (-1);
+		_putchar('-');
+		len++;
 	}
 	if (n == 0)
 	{
