@@ -64,12 +64,21 @@ int pr_hexa(va_list args)
 		return (1);
 	}
 
+	if ((int)n < 0)
+	{
+		_putchar('0');
+		len = pr_num((int)-n);
+	}
+	else
+	{
+
 	hexa = int_to_hex(n);
 	if (hexa == NULL)
 		return (-1);
 
 	len = _puts(hexa);
 	free(hexa);
+	}
 
 	return (len);
 }
@@ -93,12 +102,21 @@ int pr_heXa(va_list args)
 		return (1);
 	}
 
-	hexa = int_to_hex(n);
+	if ((int)n < 0)
+	{
+		_putchar('-');
+		len = pr_num((int)-n);
+	}
+	else
+	{
+
+	hexa = int_to_hex((int)n);
 	if (hexa == NULL)
 		return (-1);
 
 	len = _puts(hexa);
 	free(hexa);
+	}
 
 	return (len);
 }
