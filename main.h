@@ -16,6 +16,7 @@ char *arr_rev(char *arr);
 char *int_to_octal(unsigned int n);
 char *int_to_hex(int n);
 char *int_to_heX(int n);
+char *convert(unsigned long int num, int base, int uppercase);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
