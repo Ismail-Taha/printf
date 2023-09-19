@@ -31,8 +31,6 @@ int pr_octal(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 
-	if (n < 1)
-		return (-1);
 	return (int_to_octal(n));
 }
 
