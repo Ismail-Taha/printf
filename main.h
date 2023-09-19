@@ -11,7 +11,7 @@ int _puts(char *str);
 int pr_num(int n);
 int pr_unsigned_num(unsigned int n);
 int base_len(int n, int dev);
-char *int_to_binary(int n);
+int int_to_binary(int n);
 char *arr_rev(char *arr);
 char *int_to_octal(unsigned int n);
 char *int_to_hex(int n);

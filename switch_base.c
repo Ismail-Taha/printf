@@ -29,24 +29,18 @@ int base_len(int n, int dev)
  *
  * @n: integer to be switched
  *
- * Return: binary forme of n
+ * Return: number of character printed
  */
-char *int_to_binary(int n)
+int int_to_binary(int n)
 {
 	char *bin;
-	int len, i, is_p = 1;
-	char *reversed;
+	int len, i;
 
-	if (n < 0)
-	{
-		n = -n;
-		is_p = 0;
-	}
 	len = base_len(n, 2);
 	bin = malloc(sizeof(char) * (len + 1));
 	if (bin == NULL)
 	{
-		return (NULL);
+		return (-1);
 	}
 
 	for (i = 0 ; i < len; i++)
@@ -55,17 +49,10 @@ char *int_to_binary(int n)
 		n = n / 2;
 	}
 	bin[len] = '\0';
-
-	if (is_p == 0)
-	{
-		for (i = 0; bin[i] != '\0'; i++)
-		{
-			bin[i] = (bin[i] == '0') ? '1' : '0';
-		}
-	}
-	reversed = arr_rev(bin);
+	for (i = len - 1; i > 0; i--)
+		_putchar(bin[i]);
 	free(bin);
-	return (reversed);
+	return (len);
 }
 
 /**
