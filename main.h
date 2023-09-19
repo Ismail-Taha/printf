@@ -17,6 +17,7 @@ char *int_to_octal(unsigned int n);
 char *int_to_hex(int n);
 char *int_to_heX(int n);
 char *convert(unsigned long int num, int base, int uppercase);
+char *rot13(char *s);
 /* printers */
 int pr_char(va_list arg);
 int pr_string(va_list arg);
@@ -31,6 +32,7 @@ int pr_string_special(va_list args);
 int pr_hexa_char(char c);
 int pr_pointer(va_list args);
 int pr_reverse(va_list args);
+int pr_rot13(va_list arg);
 /* struct */
 
 /**
