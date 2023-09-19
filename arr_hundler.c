@@ -24,7 +24,7 @@ char *arr_rev(char *arr)
 	{
 		return (NULL);
 	}
-	for (i = 0, j = length - 1; j > 0; i++, j--)
+	for (i = 0, j = length - 1; j >= 0; i++, j--)
 	{
 		reversed[i] = arr[j];
 	}
