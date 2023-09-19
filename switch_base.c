@@ -43,8 +43,6 @@ int int_to_binary(unsigned int n)
 	{
 		return (_putchar('0'));
 	}
-	if (n < 0)
-		return (-1);
 	for (i = 0 ; n > 0; i++)
 	{
 		if (n % 2 == 0)
@@ -86,8 +84,6 @@ int int_to_octal(unsigned int n)
 	}
 	if (n == 0)
 		return (putchar('0'));
-	if (n < 0)
-		return (-1);
 	for (i = 0 ; n > 0; i++)
 	{
 		octal[i] = '0' + (n % 8);
@@ -126,8 +122,6 @@ int int_to_hex(unsigned int n)
 	}
 	if (n == 0)
 		return (_putchar('0'));
-	if (n < 0)
-		return (-1);
 	for (i = 0; n > 0; i++)
 	{
 		mod = n % 16;
@@ -175,8 +169,6 @@ int int_to_heX(unsigned int n)
 	{
 		return (_putchar('0'));
 	}
-	if (n < 1)
-		return (-1);
 	for (i = 0; n > 0; i++)
 	{
 		mod = n % 16;
