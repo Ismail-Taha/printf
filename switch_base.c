@@ -63,37 +63,41 @@ int int_to_binary(unsigned int n)
 }
 
 /**
- * int_to_octal - switch int to binary
+ * int_to_octal - switch int to octal
  *
  * @n: integer to be switched
  *
- * Return: octal forme of n
+ * Return: number of character printed
  */
 
 
-char *int_to_octal(unsigned int n)
+int int_to_octal(unsigned int n)
 {
 	char *octal;
 	int len, i;
-	char *reversed;
 
 	len = base_len(n, 8);
 	octal = malloc(sizeof(char) * (len + 1));
 	if (octal == NULL)
 	{
-		return (NULL);
+		return (-1);
 	}
-
-	for (i = 0 ; i < len; i++)
+	if (n == 0)
+		return (putchar('0'));
+	for (i = 0 ; n > 0; i++)
 	{
 		octal[i] = '0' + (n % 8);
 		n = n / 8;
 	}
-	octal[len] = '\0';
-
-	reversed = arr_rev(octal);
+	octal[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		_putchar(octal[i]);
+		i--;
+	}
 	free(octal);
-	return (reversed);
+	return (len);
 }
 
 /**
@@ -101,24 +105,24 @@ char *int_to_octal(unsigned int n)
  *
  * @n: integer to be switched
  *
- * Return: hex forme of n
+ * Return: number of characters printed
  */
 
-char *int_to_hex(int n)
+int int_to_hex(unsigned int n)
 {
 	char *hex;
 	int len, i;
-	char *reversed;
 	int mod;
 
 	len = base_len(n, 16);
 	hex = malloc(sizeof(char) * (len + 1));
 	if (hex == NULL)
 	{
-		return (NULL);
+		return (-1);
 	}
-
-	for (i = 0 ; i < len; i++)
+	if (n == 0)
+		return (_putchar('0'));
+	for (i = 0; n > 0; i++)
 	{
 		mod = n % 16;
 		if (mod < 10)
@@ -130,11 +134,15 @@ char *int_to_hex(int n)
 		}
 		n = n / 16;
 	}
-	hex[len] = '\0';
-
-	reversed = arr_rev(hex);
+	hex[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		_putchar(hex[i]);
+		i--;
+	}
 	free(hex);
-	return (reversed);
+	return (len);
 
 }
 /**
@@ -142,24 +150,26 @@ char *int_to_hex(int n)
  *
  * @n: integer to be switched
  *
- * Return: hex forme of n
+ * Return: number of characters printed
  */
 
-char *int_to_heX(int n)
+int int_to_heX(unsigned int n)
 {
 	char *hex;
 	int len, i;
-	char *reversed;
 	int mod;
 
 	len = base_len(n, 16);
 	hex = malloc(sizeof(char) * (len + 1));
 	if (hex == NULL)
 	{
-		return (NULL);
+		return (-1);
 	}
-
-	for (i = 0 ; i < len; i++)
+	if (n == 0)
+	{
+		return (_putchar('0'));
+	}
+	for (i = 0; n > 0; i++)
 	{
 		mod = n % 16;
 		if (mod < 10)
@@ -171,16 +181,14 @@ char *int_to_heX(int n)
 		}
 		n = n / 16;
 	}
-	hex[len] = '\0';
-
-	reversed = arr_rev(hex);
+	hex[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		_putchar(hex[i]);
+		i--;
+	}
 	free(hex);
-	return (reversed);
+	return (len);
 
 }
-
-
-
-
-
-

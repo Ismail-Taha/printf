@@ -11,8 +11,13 @@ int pr_unsigned_int(va_list args)
 	unsigned int n;
 
 	n = va_arg(args, unsigned int);
+
 	if (n == 0)
 		return (pr_unsigned_num(n));
+
+	if (n < 1)
+		return (-1);
+
 	return (pr_unsigned_num(n));
 }
 
@@ -24,24 +29,9 @@ int pr_unsigned_int(va_list args)
 
 int pr_octal(va_list args)
 {
-	unsigned int n;
-	char *octal;
-	int len = 0;
+	unsigned int n = va_arg(args, unsigned int);
 
-	n = va_arg(args, unsigned int);
-
-	if (n == 0)
-	{
-		return (_putchar('0'));
-	}
-	octal = int_to_octal(n);
-	if (octal == NULL)
-		return (-1);
-
-	len = _puts(octal);
-	free(octal);
-
-	return (len);
+	return (int_to_octal(n));
 }
 
 /**
@@ -51,25 +41,9 @@ int pr_octal(va_list args)
  */
 int pr_hexa(va_list args)
 {
-	unsigned int n;
-	char *hexa;
-	int len = 0;
+	unsigned int n = va_arg(args, unsigned int);
 
-	n = va_arg(args, unsigned int);
-	if (n == 0)
-	{
-		return (_putchar('0'));
-	}
-
-
-	hexa = int_to_hex(n);
-	if (hexa == NULL)
-		return (-1);
-
-	len = _puts(hexa);
-	free(hexa);
-
-	return (len);
+	return (int_to_hex(n));
 }
 
 /**
@@ -79,23 +53,7 @@ int pr_hexa(va_list args)
  */
 int pr_heXa(va_list args)
 {
-	unsigned int n;
-	char *hexa;
-	int len = 0;
+	unsigned int n = va_arg(args, unsigned int);
 
-	n = va_arg(args, unsigned int);
-
-	if (n == 0)
-	{
-		return (_putchar('0'));
-	}
-
-	hexa = int_to_heX(n);
-	if (hexa == NULL)
-		return (-1);
-
-	len = _puts(hexa);
-	free(hexa);
-
-	return (len);
+	return (int_to_heX(n));
 }
