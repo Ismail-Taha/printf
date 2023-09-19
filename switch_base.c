@@ -34,7 +34,7 @@ int base_len(int n, int dev)
 int int_to_binary(int n)
 {
 	char *bin;
-	int len, i;
+	int len = 0, i;
 
 	len = base_len(n, 2);
 	bin = malloc(sizeof(char) * (len + 1));
@@ -42,7 +42,13 @@ int int_to_binary(int n)
 	{
 		return (-1);
 	}
-
+	if (n < 0)
+		return (-1);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (len++);
+	}
 	for (i = 0 ; i < len; i++)
 	{
 		bin[i] = '0' + (n % 2);
