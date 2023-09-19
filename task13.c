@@ -8,20 +8,17 @@
 
 int pr_reverse(va_list args)
 {
-	int len = 0;
-	char *str = va_arg(args, char *);
-	char *bin;
+	int i = 0, j;
+	char *str = va_arg(l, char *);
 
-	if (str == NULL)
-	{
+	if (!str)
 		str = "(null)";
-	}
-	bin = arr_rev(str);
-	if (bin == NULL)
-		return (-1);
-	len = _puts(bin);
-	free(str);
-	free(bin);
 
-	return (len);
+	while (str[i])
+		i++;
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(str[j]);
+
+	return (i);	
 }
