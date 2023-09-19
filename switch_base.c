@@ -165,7 +165,10 @@ int int_to_heX(unsigned int n)
 	{
 		return (-1);
 	}
-
+	if (n == 0)
+	{
+		return (_putchar('0'));
+	}
 	for (i = 0; n > 0; i++)
 	{
 		mod = n % 16;
