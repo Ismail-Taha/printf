@@ -9,7 +9,7 @@
 int pr_reverse(va_list args)
 {
 	int i = 0, j;
-	char *str = va_arg(l, char *);
+	char *str = va_arg(args, char *);
 
 	if (!str)
 		str = "(null)";
