@@ -1,25 +1,35 @@
 #include "main.h"
 
 /**
- * pr_pointer - Prints a pointer in hexadecimal format with a '0x' prefix.
- * @args: The argument list containing the pointer to be printed
- *
+ * pr_pointer - Prints a memory address in hexadecimal format with "0x" prefix
+ * @arg: The argument list containing the memory address to be printed
  * Return: The number of characters printed
  */
 
-int pr_pointer(va_list args)
+int pr_pointer(va_list arg)
 {
+	unsigned long int ptr = va_arg(arg, unsigned long int);
+	char *hexa;
 	int count = 0;
-	void *ptr = va_arg(args, void *);
-	unsigned long addr = (unsigned long)ptr;
-	char *hexa = int_to_hex(addr);
 
-	if (!hexa)
-		return (_puts("(nil)"));
-
-	count = _puts("0x");
-	count += _puts(hexa);
-	free(hexa);
+	if (ptr == 0)
+	{
+		count += _puts("(nil)");
+	}
+	else
+	{
+		count += _puts("0x");
+		hexa = convert(ptr, 16, 1);
+		if (hexad != NULL)
+		{
+			count += _puts(hexad;
+			free(hexa);
+		}
+		else
+		{
+			return (-1);
+		}
+	}
 
 	return (count);
 }
