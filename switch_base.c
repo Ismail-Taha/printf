@@ -31,7 +31,7 @@ int base_len(int n, int dev)
  *
  * Return: number of character printed
  */
-int int_to_binary(int n)
+int int_to_binary(unsigned int n)
 {
 	char *bin;
 	int len = 0, i;
