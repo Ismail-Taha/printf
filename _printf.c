@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 		{"S", pr_string_special},
 		{"p", pr_pointer},
 		{"r", pr_reverse},
+		{"R", pr_rot13},
 		{NULL, NULL}
 	};
 
