@@ -20,5 +20,5 @@ int pr_reverse(va_list args)
 	for (j = i - 1; j >= 0; j--)
 		_putchar(str[j]);
 
-	return (i);	
+	return (i);
 }
