@@ -13,9 +13,9 @@ int pr_unsigned_num(unsigned int n);
 unsigned int base_len(unsigned int n, int dev);
 int int_to_binary(unsigned int n);
 char *arr_rev(char *arr);
-char *int_to_octal(unsigned int n);
-char *int_to_hex(int n);
-char *int_to_heX(int n);
+int int_to_octal(unsigned int n);
+int int_to_hex(unsigned int n);
+int int_to_heX(unsigned int n);
 char *convert(unsigned long int num, int base, int uppercase);
 int rot13(char *str);
 /* printers */

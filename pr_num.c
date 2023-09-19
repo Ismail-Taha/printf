@@ -58,8 +58,7 @@ int pr_unsigned_num(unsigned int n)
 
 	while (div != 0)
 	{
-		len++;
-		_putchar('0' + num / div);
+		len += _putchar('0' + num / div);
 		num %= div;
 		div /= 10;
 	}
