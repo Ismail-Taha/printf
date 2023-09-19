@@ -31,6 +31,8 @@ int pr_octal(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 
+	if (n < 1)
+		return (-1);
 	return (int_to_octal(n));
 }
 
@@ -43,6 +45,8 @@ int pr_hexa(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 
+	if (n < 1)
+		return (-1);
 	return (int_to_hex(n));
 }
 
@@ -55,5 +59,7 @@ int pr_heXa(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
 
+	if (n < 1)
+		return (-1);
 	return (int_to_heX(n));
 }
