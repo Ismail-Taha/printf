@@ -52,6 +52,7 @@ int int_to_binary(unsigned int n)
 		n = n / 2;
 	}
 	bin[i] = '\0';
+	i--;
 	while (i > 0)
 	{
 		_putchar(bin[i]);
