@@ -23,8 +23,12 @@ int rot13(char *str)
 		{
 			if (str[i] == a[j])
 			{
+<<<<<<< HEAD
 				_putchar(b[j]);
 				break;
+=======
+				s[i] = b[j];
+>>>>>>> fbdaeac7c5b354bd92077e9bf85b5247f52a0622
 			}
 		}
 		if (j == 53)
