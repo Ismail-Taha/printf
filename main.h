@@ -10,7 +10,7 @@ int _putchar(char c);
 int _puts(char *str);
 int pr_num(int n);
 int pr_unsigned_num(unsigned int n);
-int base_len(int n, int dev);
+unsigned int base_len(unsigned int n, int dev);
 int int_to_binary(unsigned int n);
 char *arr_rev(char *arr);
 char *int_to_octal(unsigned int n);

@@ -10,16 +10,13 @@
  */
 
 
-int base_len(int n, int dev)
+unsigned int base_len(unsigned int n, int dev)
 {
 	int len;
 
-	len = 0;
-
-	while (n  > 0)
+	for (len = 0; n  > 0; len++)
 	{
 		n = n / dev;
-		len++;
 	}
 	return (len);
 }
@@ -44,17 +41,22 @@ int int_to_binary(unsigned int n)
 	}
 	if (n == 0)
 	{
-		_putchar('0');
-		return (len++);
+		return (_putchar('0'));
 	}
-	for (i = 0 ; i < len; i++)
+	for (i = 0 ; n > 0; i++)
 	{
-		bin[i] = '0' + (n % 2);
+		if (n % 2 == 0)
+			bin[i] = '0';
+		else
+			bin[i] = '1';
 		n = n / 2;
 	}
-	bin[len] = '\0';
-	for (i = len - 1; i > 0; i--)
+	bin[i] = '\0';
+	while (i > 0)
+	{
 		_putchar(bin[i]);
+		i--;
+	}
 	free(bin);
 	return (len);
 }
