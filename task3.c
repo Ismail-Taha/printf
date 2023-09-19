@@ -12,6 +12,11 @@ int pr_unsigned_int(va_list args)
 
 	n = va_arg(args, unsigned int);
 
+	if (num == 0)
+		return (pr_unsgined_number(num));
+
+	if (num < 1)
+		return (-1);
 
 	return (pr_unsigned_num(n));
 }

@@ -63,7 +63,7 @@ int int_to_binary(unsigned int n)
 }
 
 /**
- * int_to_octal - switch int to binary
+ * int_to_octal - switch int to octal
  *
  * @n: integer to be switched
  *
