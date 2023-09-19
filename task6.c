@@ -14,7 +14,8 @@ int pr_pointer(va_list args)
 
 	var = va_arg(args, int);
 	buffer = change_to_hex(var);
-	addr = _puts("0x");
+	addr = _putchar("0");
+	addr = _putchar("x");
 	addr += _puts(buffer);
 	free(buffer);
 	return (addr);
@@ -44,7 +45,7 @@ char *change_to_hex(unsigned int n)
 	{
 		hex[0] = '0';
 		hex[1] = '\0';
-		return(hex);
+		return (hex);
 	}
 	for (i = 0; n > 0; i++)
 	{
