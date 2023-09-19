@@ -13,8 +13,9 @@ int pr_reverse(va_list args)
 	char *bin;
 
 	if (str == NULL)
-		return (-1);
-
+	{
+		str = "(null)";
+	}
 	bin = arr_rev(str);
 	if (bin == NULL)
 		return (-1);
