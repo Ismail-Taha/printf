@@ -1,67 +1,86 @@
 #include "main.h"
 
 /**
- * pr_pointer - print the address
- * @args: va_list
- * Return: addr
-*/
-
-int pr_pointer(va_list args)
-{
-	int addr;
-	unsigned int var;
-	char *buffer;
-
-	var = va_arg(args, int);
-	buffer = change_to_hex(var);
-	addr = _putchar('0');
-	addr = _putchar('x');
-	addr += _puts(buffer);
-	free(buffer);
-	return (addr);
-}
-
-/**
- * change_to_hex - Convert an unsigned integer to hexa low
- * @n : the number to convert
- *
- * Return: A dynamically allocated string containing the converted number.
+ * pr_pointer - Prints a memory address in hexadecimal format with "0x" prefix
+ * @arg: The argument list containing the memory address to be printed
+ * Return: The number of characters printed
  */
 
-char *change_to_hex(unsigned int n)
+int pr_pointer(va_list arg)
 {
-	char *hex;
-	int len, i;
-	int mod;
-	char *rev;
+	unsigned long int ptr = va_arg(arg, unsigned long int);
+	char *hexa;
+	int count = 0;
 
-	len = base_len(n, 16);
-	hex = malloc(sizeof(char) * (len + 1));
-	if (hex == NULL)
+	if (ptr == 0)
 	{
-		return (NULL);
+		count += _puts("(nil)");
 	}
-	if (n == 0)
+	else
 	{
-		hex[0] = '0';
-		hex[1] = '\0';
-		return (hex);
-	}
-	for (i = 0; n > 0; i++)
-	{
-		mod = n % 16;
-		if (mod < 10)
+		count += _puts("0x");
+		hexa = convert(ptr, 16, 1);
+		if (hexa != NULL)
 		{
-			hex[i] = '0' + mod;
+			count += _puts(hexa);
+			free(hexa);
 		}
 		else
 		{
-			hex[i] = 'a' + mod - 10;
+			return (-1);
 		}
-		n = n / 16;
 	}
-	hex[i] = '\0';
-	rev = arr_rev(hex);
-	free(hex);
-	return (rev);
+
+	return (count);
+}
+
+/**
+ * convert - Convert an unsigned long integer to a specified base as a string.
+ * @num: The number to convert.
+ * @base: The base for conversion (e.g., 16 for hexadecimal).
+ * @uppercase: Whether to use uppercase letters for hexadecimal
+ *
+ * Return: A dynamically allocated string containing the converted number.
+ */
+char *convert(unsigned long int num, int base, int uppercase)
+{
+	char buffer[64];
+	char *result;
+	int i = 0;
+	int j = 0;
+	char *hex_chars;
+
+	if (uppercase)
+		hex_chars = "0123456789ABCDEF";
+	else
+		hex_chars = "0123456789abcdef";
+
+
+	if (num == 0)
+	{
+		result = malloc(2);
+		if (!result)
+			return (NULL);
+		result[0] = '0';
+		result[1] = '\0';
+		return (result);
+	}
+
+	while (num > 0)
+	{
+		buffer[i++] = hex_chars[num % base];
+		num /= base;
+	}
+
+	result = malloc(i + 1);
+	if (!result)
+		return (NULL);
+
+
+	for (j = 0; i > 0; j++, i--)
+
+		result[j] = buffer[i - 1];
+	result[j] = '\0';
+
+	return (result);
 }
