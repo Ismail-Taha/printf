@@ -1,56 +1,49 @@
-he printf function sends formatted output to stdout.
-A custom _printf() for learning purposes was developed by cohort  #16 students David Kadiri and Anthony Osigbe.
-_printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
-These arguments are placed using the percentage '%' operator
+# Printf_project
 
-.SS Compilation
+printf - Format and print data to the standard output
 
-.P
-.RS
+# SYNOPSIS
 #include "main.h"
+int _printf(const char *format, ...);
 
-$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
-$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debbuging)
-.RE
+# DESCRIPTION
+The _printf function is a custom implementation of the printf function in C. It formats and prints data to the standard output (stdout) based on the provided format string.
 
-.SS Printing
-.RS
+# RETURN VALUE
+The _printf function returns the number of characters printed (excluding the null byte used to end output to strings). In case of an error, it returns -1.
 
-int _printf(const char *[FORMAT], ...);
+# FORMAT SPECIFIERS
+The format string can contain the following conversion specifiers:
 
-FORMAT is the string that takes n specifier followed by a '%'
-symbol. i.e. "Hello this is %s from %d cohort". '...' is the variadic \
-(any type of variable).
+- %c: Prints a character.
+- %s: Prints a string.
+- %%: Prints a percent sign.
+-%S: print non printable charachter.
+-%r: prints the reversed string.
+-%R: prints the rot13'ed string.
+-%p: print address.
 
-.SS Example
+In addition to the standard conversion specifiers, _printf supports the following custom conversion specifiers:
 
-.RS
+- %b: Converts an unsigned int argument to binary.
+- %S: Prints a string with non-printable characters represented as \x, followed by the ASCII code value in hexadecimal (uppercase).
 
-.B Input
-.PP
-_printf("Hello this is %s from %d cohort\\n\\", 33);
-.PP
-.B Output
-.PP
-Hello this is %s from %d cohort
-.RE
+# EXAMPLES
+Here are some examples of how to use _printf:
 
-.SS Return Value
+- _printf("%c\n", 'A'): Prints the character 'A'.
+- _printf("%s\n", "Hello"): Prints the string "Hello".
+- _printf("Value in binary: %b\n", 42): Prints the binary representation of 42.
+- _printf("Non-printable character: %S\n", "Hello\x07World"): Prints the string with non-printable characters represented.
 
-Return value is a n number of characters except NULL
+# AUTHOR
+This custom printf implementation was created by :
+Ismail-Taha <https://github.com/Ismail-Taha>
+Youssef Rachidi <https://github.com/Joe-0009>
 
-.SH FLAG SPECIFIERS
-.SH ""
+# SEE ALSO
+man(1), printf(3)
 
-custom and non-custom specifier modifiers
+# NOTES
+This is a custom implementation of the printf function and may not provide all the features and behavior of the standard printf function in the C library.
 
-.SH THE LENGTH MODIFIERS
-.SH ""
-
-Length modifiers.
-
-.SH THE CONVERSION SPECIFIERS
-.SH ""
-
-.RS
-Current arguments handled by conversion specifiers:
